@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./prism-material-oceanic.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <link href="./main.css" rel="stylesheet">
+  <link media="print" href="./print.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Bevezető</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./nyelviAlapok.html">Nyelvi Alapok</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: #65FFDC;" href="./helloWorld.html">Hello World</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./tanulasiForrasok.html">Tanulási Források</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container pb-5">
+
+    <section>
+      <div class="text-center pt-5">
+        <h1>Hello World!</h1>
+      </div>
+      
+     <article>
+       <h2>Hello World!</h2>
+       <p>A klasszikus "Hello World!" program megírása Brainfuck nyelven:</p>
+       <div class="d-flex justify-content-center align-items-center">
+        <div class="rounded background"></div>
+       </div>
+       <pre
+         class="rounded"><code class="language-brainfuck">brainfuck
+++++++[&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;+++++++++++++++.&gt;.+++.------.--------.&gt;+.&gt;.</code></pre>
+       
+     </article>
+      <article>
+        <h2>Magyarázat</h2>
+        <pre class="rounded"><code class="language-brainfuck">brainfuck
+++++++                    # 10-el inicializálja a memóriatér 1. celláját
+;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]    # Ciklus kezdete, létrehoz néhány értéket a memóriában, hogy előállítsa az "H" karaktert
+++.                        # Kiírja az "H" karaktert
++.                         # Kiírja az "e" karaktert
++++..                   # Kiírja a "llo" karaktereket
+                        # Kiírja a " " (szóköz) karaktert
+++.                        # Kiírja az "W" karaktert
+&lt;+++++++++++++++.          # Kiírja az "o" karaktert
+.                          # Kiírja a "r" karaktert
+                        # Kiírja a "l" karaktert
+--.                     # Kiírja a "d" karaktert
+-----.                  # Kiírja az "!" karaktert
++.                         # Kiírja egy új sor karakterét (\n)</code></pre>
+        
+      </article>
+      <figure>
+        <div class="d-flex justify-content-center align-items-center">
+          <img src="./no-brain-loading.gif" class="img-fluid rounded align-middle" width="60%" style="margin: 2rem;"
+            alt="Tunyacsáp az agyát eldobja">
+        </div>
+      </figure>
+      <article>
+        <h2>Más nyelvekhez képest</h2>
+        <details>
+          <summary>Más nyelvekhez képest</summary>
+          <table class="table-responsive">
+            <caption>Hello World program - Brainfuck, Python, Java, JavaScript, C++ és C nyelveken</caption>
+            <thead>
+              <tr class="justify-content-center">
+                <th class="rounded-left text-center">Nyelv</th>
+                <th class="text-center">Hello World! Program</th>
+                <th class="text-center">Program hossza</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center oneLine">Brainfuck</td>
+                <td>
+                  <pre
+                    class="rounded"><code class="language-brainfuck">++++++++++[&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;+++++++++++++++.&gt;.+++.------.--------.&gt;+.&gt;.</code></pre>
+                </td>
+                <td class="text-center oneLine">111 karakter</td>
+              </tr>
+              <tr>
+                <td class="text-center oneLine">Python</td>
+                <td>
+                  <pre class="rounded"><code class="language-python">print("Hello World!")</code></pre>
+                </td>
+                <td class="text-center oneLine">21 karakter</td>
+              </tr>
+              <tr>
+                <td class="text-center oneLine">Java</td>
+                <td>
+                  <pre
+                    class="rounded"><code class="language-java">public class HelloWorld { public static void main(String[] args) { System.out.println("Hello, World!"); } }</code></pre>
+                </td>
+                <td class="text-center oneLine">107 karakter</td>
+              </tr>
+              <tr>
+                <td class="text-center oneLine">JavaScript</td>
+                <td>
+                  <pre class="rounded"><code class="language-javascript">console.log("Hello World!");</code></pre>
+                </td>
+                <td class="text-center oneLine">28 karakter</td>
+              </tr>
+              <tr>
+                <td class="text-center oneLine">C</td>
+                <td>
+                  <pre
+                    class="rounded"><code class="language-c">#include &lt;stdio.h&gt; int main() { printf("Hello, World!\n"); return 0; }</code></pre>
+                </td>
+                <td class="text-center oneLine">70 karakter</td>
+              </tr>
+              <tr>
+                <td class="text-center oneLine">C++</td>
+                <td>
+                  <pre
+                    class="rounded"><code class="language-cpp">#include &lt;iostream&gt; int main() { std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl; return 0; }</code></pre>
+                </td>
+                <td class="text-center oneLine">87 karakter</td>
+              </tr>
+            </tbody>
+          </table>
+        </details>
+        
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+          </ol>
+        
+          <div class="carousel-inner">
+        
+            <div class="carousel-item active">
+              <table class="table-responsive">
+                <caption>Hello World program - Brainfuck</caption>
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre
+                        class="rounded"><code class="language-brainfuck">++++++++++[&gt;+++++++&gt;++++++++++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]&gt;++.&gt;+.+++++++..+++.&gt;++.&lt;&lt;+++++++++++++++.&gt;.+++.------.--------.&gt;+.&gt;.</code></pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="carousel-item">
+              <table class="table-responsive">
+                <caption>Hello World program - Python</caption>
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre class="rounded"><code class="language-python">print("Hello World!")</code></pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="carousel-item">
+              <table class="table-responsive">
+                <caption>Hello World program - Java</caption>
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre
+                        class="rounded"><code class="language-java">public class HelloWorld { public static void main(String[] args) { System.out.println("Hello, World!"); } }</code></pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="carousel-item">
+              <table class="table-responsive">
+                <caption>Hello World program - JavaScript</caption>
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre class="rounded"><code class="language-javascript">console.log("Hello World!");</code></pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="carousel-item">
+              <table class="table-responsive">
+                <caption>Hello World program - C</caption>
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre
+                        class="rounded"><code class="language-c">#include &lt;stdio.h&gt; int main() { printf("Hello, World!\n"); return 0; }</code></pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="carousel-item">
+              <table class="table-responsive">
+                <caption>Hello World program - C++</caption>
+                <tbody>
+                  <tr>
+                    <td>
+                      <pre
+                        class="rounded"><code class="language-cpp">#include &lt;iostream&gt; int main() { std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl; return 0; }</code></pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          </div>
+      </article>
+
+      <article>
+        <h2>Számváltó - másik példa</h2>
+        <p>A Brainfuck nyelvvel könnyen lehet számokat átváltani különböző számrendszerbe. Például, ha meg szeretnénk
+          jeleníteni a 10-es számot bináris formában:</p>
+        <pre class="rounded"><code class="language-brainfuck">brainfuck
++ +++++             inicializálja a számlálót (cella #0) 10-re
+                    ciklus használata az osztás eredményének megkapására 2-vel
+> +++++ ++              hozzáad 7-t a #1 cellához
+> +++++ +++++           hozzáad 10-et a #2 cellához
+> +++                   hozzáad 3-at a #3 cellához
+> +                     hozzáad 1-et a #4 cellához
+<<<< -                  csökkenti a számlálót (cella #0)
+
+ .                  kiírja '0'-t
+.                   kiírja '1'-et</code></pre>
+      </article>
+    </section>
+      </div>
+      <footer class="footer">
+        <div class="container text-center">
+          <p>&copy; 2024 Pásztor Máté</p>
+        </div>
+      </footer>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-core.min.js"></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+
+</html>

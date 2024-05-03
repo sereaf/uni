@@ -1,0 +1,149 @@
+body {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Arial, sans-serif;
+}
+
+.p {
+    font-family: sans-serif;
+    font-size: 0.875rem;
+    margin-bottom: 20px;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+a {
+    color: #65FFDC;
+}
+
+a:visited {
+    color: #65EEDC;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #65FFDC;
+    padding-top: 3rem;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #333;
+}
+
+.token.operator {
+    background-color: transparent !important;
+}
+
+td {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+pre.language-brainfuck,
+code.language-brainfuck,
+pre.language-python,
+code.language-python,
+pre.language-java,
+code.language-java,
+pre.language-javascript,
+code.language-javascript,
+pre.language-c,
+code.language-c,
+pre.language-cpp,
+code.language-cpp {
+    background-color: #333;
+    text-shadow: none;
+}
+
+.oneLine {
+    white-space: nowrap;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+#languages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.custom-control-input:checked+.custom-control-label::before {
+    background-color: transparent;
+    border-color: #222;
+    color: #222;
+}
+
+.custom-radio .custom-control-input:checked~.custom-control-label::before {
+    background-color: #65FFDC;
+    border-color: transparent;
+}
+
+#name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    margin: 2rem;
+    width: 250px;
+    height: 150px;
+    background-image: url('hello-world.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.video {
+    margin-left: 50%;
+    transform: translate(-50%);
+    margin-top: 100px;
+}

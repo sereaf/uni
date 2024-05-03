@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nyelvi alapok</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./prism-material-oceanic.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+  <link href="./main.css" rel="stylesheet">
+  <link media="print" href="./print.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Bevezető</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: #65FFDC;" href="./nyelviAlapok.html">Nyelvi Alapok</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./helloWorld.html">Hello World</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./tanulasiForrasok.html">Tanulási Források</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container pb-5">
+    <div class="text-center pt-5">
+      <h1>Nyelvi alapok</h1>
+    </div>
+
+
+    <figure>
+      <div class="d-flex justify-content-center align-items-center">
+        <img src="./dumb-stupid.gif" class="img-fluid rounded align-middle" width="60%" style="margin: 2rem;"
+          alt="Smooth brain tunyacsáp">
+      </div>
+    </figure>
+
+
+    <section>
+      <article>
+        <h2>Az Alapok</h2>
+        <p>A Brainfuck nyelv rendkívül egyszerű nyelvtani szabályokkal rendelkezik. Csak hét utasítást tartalmaz,
+          amelyek
+          mindegyike egyetlen karakterből áll.</p>
+      </article>
+
+      <article>
+        <h2>Az Utasítások</h2>
+        <table>
+          <thead>
+            <tr class="justify-content-center">
+              <th class="rounded-left text-center">Utasítás</th>
+              <th class="rounded-right">Leírás</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center">></td>
+              <td>A memória pointer jobbra mozgatása egy cellával.</td>
+            </tr>
+            <tr>
+              <td class="text-center"><</td>
+              <td>A memória pointer balra mozgatása egy cellával.</td>
+            </tr>
+            <tr>
+              <td class="text-center">+</td>
+              <td>Az aktuális cella értékének növelése eggyel.</td>
+            </tr>
+            <tr>
+              <td class="text-center">-</td>
+              <td>Az aktuális cella értékének csökkentése eggyel.</td>
+            </tr>
+            <tr>
+              <td class="text-center">.</td>
+              <td>Az aktuális cella értékének kiírása.</td>
+            </tr>
+            <tr>
+              <td class="text-center">,</td>
+              <td>Bemenet beolvasása az aktuális cellába.</td>
+            </tr>
+            <tr>
+              <td class="text-center">[</td>
+              <td>Ha az aktuális cella értéke nulla, akkor ugorj a párjához tartozó ] karakterhez. Különben folytasd a
+                következő utasítással.</td>
+            </tr>
+            <tr>
+              <td class="text-center">]</td>
+              <td>Ha az aktuális cella értéke nem nulla, akkor ugorj a párjához tartozó [ karakterhez. Különben folytasd
+                a
+                következő utasítással.</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article>
+        <h2>Memória</h2>
+        <p>A Brainfuck nyelvben az adatok egy <strong>véges hosszú memóriatérben</strong> tárolódnak, amely cellákból áll. Minden cella
+          <strong>egyetlen byte-ot</strong> tárolhat.</p>
+      </article>
+
+      <article>
+        <h2>Példa</h2>
+        <pre
+          class="rounded"><code class="language-brainfuck">brainfuck
++[&lt;+&gt;-]++++++++[&lt;++++++&gt;-]&lt;.&gt;+++++++[&lt;++++&gt;-]&lt;+.+++++++..+++.&gt;&gt;++++++[&lt;+++++&gt;-]&lt;+
+t;.+++.------.--------.&gt;&gt;++++++[&lt;+++++++&gt;-]&lt;+.&lt;-.&gt;+++++[&lt;++&gt;-]&lt;-.&lt;.---------.&gt;++++++[&lt;++
+gt;-]&lt;+.------------.---.+++++++.---------.++++++++++++.-----------.&gt;&gt;++++++[&lt;+++++++&gt;-]&lt;+.&lt;-.&gt;++++
+t;++&gt;-]&lt;-.++++++++++++.-------------.&gt;++++++[&lt;+++++++&gt;-]&lt;+.&gt;+++++++++[&lt;------&gt;-]&lt;.</code></pre>
+      </article>
+    </section>
+
+
+
+    <figure>
+      <div class="d-flex justify-content-center align-items-center">
+        <a href="./image.png" target="_blank">
+          <img src="./image.png" class="img-fluid rounded align-middle" width="100%" style="margin: 2rem;"
+            alt="Big brain">
+        </a>
+      </div>
+    </figure>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2024 Pásztor Máté</p>
+    </div>
+  </footer>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+
+</html>

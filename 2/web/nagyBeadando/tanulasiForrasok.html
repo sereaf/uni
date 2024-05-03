@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanulási források</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./main.css" rel="stylesheet">
+  <link media="print" href="./print.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Bevezető</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./nyelviAlapok.html">Nyelvi Alapok</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./helloWorld.html">Hello World</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: #65FFDC;" href="./tanulasiForrasok.html">Tanulási Források</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container pb-5">
+    <div class="text-center pt-5">
+      <h1>Tanulási Források</h1>
+    </div>
+    <h2>Kihívások</h2>
+    <p>A Brainfuck nyelv használata kihívást jelent a programozók számára, mivel a szűkös szintaxis miatt nehéz olvasni
+      és írni. Azonban ez egy nagyszerű lehetőség a programozók számára, hogy elmélyüljenek a számítógép működésének
+      megértésében és a Turing-gépek elméletében.</p>
+
+    <figure>
+      <div class="d-flex justify-content-center align-items-center">
+        <img src="./brain-taking-out.gif" class="img-fluid rounded align-middle" width="60%" style="margin: 2rem;"
+          alt="Tunyacsáp az agyát eldobja">
+      </div>
+    </figure>
+
+    <h2>Tanulási Források</h2>
+    <p>Számos online forrás és tutorial áll rendelkezésre, amelyek segítenek megérteni és elsajátítani a Brainfuck
+      nyelvet. Ezek közé tartoznak a Brainfuck wikik, online kódleírók és tanulási platformok, amelyek interaktív módon
+      vezetik be a programozókat a nyelv rejtelmeibe. Ezek a források ideálisak kezdőknek és haladóknak egyaránt, akik
+      mélyebben szeretnék megérteni és kipróbálni a Brainfuck programozási nyelvet.</p>
+    <p><a class="underline" target="_blank" rel=noopener
+        href="https://gist.github.com/roachhd/dce54bec8ba55fb17d3a">Részletesebben a nyelvről</a></p>
+    <p><a class="underline" target="_blank" rel=noopener href="https://hu.wikipedia.org/wiki/Brainfuck">További
+        információ a
+        nyelvről</a></p>
+    <p><a class="underline" target="_blank" rel=noopener
+        href="https://github.com/canoon/bfbf/blob/master/bf.bf">Brainfuck interpreter in brainfuck</a></p>
+
+    <div class="video-container">
+      <iframe title="youtube" class="rounded align-middle" width="560" height="315"
+        src="https://www.youtube.com/embed/hdHjjBS4cs8" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <h2>Kérdőív</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Találkoztál már a Brainfuck programozási nyelvvel?</label>
+        <div id="name">
+          <div class="custom-control custom-radio form-check-inline">
+            <input class="custom-control-input" type="radio" name="brainfuck" id="igen" value="igen">
+            <label class="custom-control-label" for="igen">Igen</label>
+          </div>
+          <div class="custom-control custom-radio form-check-inline">
+            <input class="custom-control-input" type="radio" name="brainfuck" id="nem" value="nem">
+            <label class="custom-control-label" for="nem">Nem</label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="languages">Milyen nyelveket ismersz?</label>
+        <div id="languages">
+          <div class="custom-control custom-checkbox form-check-inline">
+            <input class="custom-control-input" type="checkbox" value="python" id="python">
+            <label class="custom-control-label" for="python">Python</label>
+          </div>
+          <div class="custom-control custom-checkbox form-check-inline">
+            <input class="custom-control-input" type="checkbox" value="js" id="javascript">
+            <label class="custom-control-label" for="javascript">JavaScript</label>
+          </div>
+          <div class="custom-control custom-checkbox form-check-inline">
+            <input class="custom-control-input" type="checkbox" value="java" id="java">
+            <label class="custom-control-label" for="java">Java</label>
+          </div>
+          <div class="custom-control custom-checkbox form-check-inline">
+            <input class="custom-control-input" type="checkbox" value="c" id="c">
+            <label class="custom-control-label" for="c">C</label>
+          </div>
+          <div class="custom-control custom-checkbox form-check-inline">
+            <input class="custom-control-input" type="checkbox" value="cpp" id="cpp">
+            <label class="custom-control-label" for="cpp">C++</label>
+          </div>
+          <div class="custom-control custom-checkbox form-check-inline">
+            <input class="custom-control-input" type="checkbox" value="haskell" id="haskell">
+            <label class="custom-control-label" for="haskell">Haskell</label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="firstname">Kérlek, írd be a keresztneved!</label>
+        <input type="text" class="form-control" id="firstname" placeholder="Írd ide a keresztneved" maxlength="50">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Bármi kérdés a nyelvvel kapcsolatban:</label>
+        <textarea class="form-control" id="message" rows="3" placeholder="Írd ide a kérdésed"
+          maxlength="500"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" formmethod="post"
+        style="float: right;margin-left: 10px;background-color: #65FFDC;color: #222;border-color: #65FFDC;">Elküldés</button>
+      <button type="reset" class="btn btn-secondary"
+        style="float: right;background-color: #444;color: #fff;border-color: #444;">Törlés</button>
+    </form>
+
+    <aside>
+      <div class="pt-5">
+        <video class="rounded video" width="520" loop controls poster="high-quality-diagonally-spinning-rat-spinning-rat.jpg">
+          <source src="high-quality-diagonally-spinning-rat-spinning-rat.mp4" type="video/mp4">
+          A böngészője nem támogatja a videót.
+        </video>
+      </div>
+      <div class="pt-5">
+        <video class="rounded video" width="520" loop controls poster="Technical Jargon Overload.jpg">
+          <source src="Technical Jargon Overload.mp4" type="video/mp4" title="A videó a Rockwell Automation vállalat kutatási és fejlesztési tevékenységéről szól, amelynek célja olyan automatizálási termékek létrehozása, amelyek új szabványokat állítanak a minőség, a technológiai vezetés, a működési kiválóság terén, az elsődleges hangsúly az ügyfél sikerén van. A videó egy olyan műszer ötletéről szól, amely nemcsak reaktív áramot szolgáltat az egyfázisú fáziscsökkentőkhöz, hanem képes a kardán grammeterek automatikus szinkronizálására is. A műszer Dodge fogaskerekekből és csapágyakból, elektromos motorokból, Allen-Bradley vezérlőkből áll, és mindezt a Rockwell szoftver felügyeli. Ez a Rockwell Automation retroenkapszulátora. A lényegében az egyetlen új elv az, hogy az energia nem a vezetők és a fluxus relatív mozgásából származik, hanem a mágneses reluctancia és a kapacitív direktancia modális kölcsönhatásából. A videó ezután a retroenkapszulátor működésének részleteibe megy bele.">
+          A böngészője nem támogatja a videót.
+        </video>
+      </div>
+      <a href="video.html">A video leírása</a>
+    </aside>
+
+
+  </div>
+
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2024 Pásztor Máté</p>
+    </div>
+  </footer>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

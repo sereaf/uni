@@ -1,0 +1,22 @@
+@media print {
+
+    header,
+    nav,
+    .video-container {
+        display: none;
+    }
+
+    video {
+        display: none;
+    }
+
+    img {
+        max-width: 100px;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        margin: 1cm;
+    }
+}
