@@ -30,7 +30,7 @@ a {
 }
 
 a:visited {
-    color: #65EEDC;
+    color: #3e988d;
 }
 
 .container {
@@ -146,4 +146,10 @@ code.language-cpp {
     margin-left: 50%;
     transform: translate(-50%);
     margin-top: 100px;
+}
+
+.contrast-mode {
+    background-color: #000;
+    color: #fff;
+    font-size: large;
 }

@@ -41,7 +41,7 @@
 
   <div class="container pb-5">
     <div class="text-center pt-5">
-      <h1>Tanulási Források</h1>
+      <h1>Tanulási Források 🤓📖</h1>
     </div>
     <h2>Kihívások</h2>
     <p>A Brainfuck nyelv használata kihívást jelent a programozók számára, mivel a szűkös szintaxis miatt nehéz olvasni
@@ -132,13 +132,14 @@
           maxlength="500"></textarea>
       </div>
 
-      <button type="submit" class="btn btn-primary" formmethod="post"
+      <button type="submit" class="btn btn-primary" formmethod="post" action="mailto:tlyclb@inf.elte.hu"
         style="float: right;margin-left: 10px;background-color: #65FFDC;color: #222;border-color: #65FFDC;">Elküldés</button>
       <button type="reset" class="btn btn-secondary"
         style="float: right;background-color: #444;color: #fff;border-color: #444;">Törlés</button>
     </form>
 
     <aside>
+      <h3 class="text-center pt-5">Még egy kis agyfárasztas, mert a követelmények előírják...</h3>
       <div class="pt-5">
         <video class="rounded video" width="520" loop controls poster="high-quality-diagonally-spinning-rat-spinning-rat.jpg">
           <source src="high-quality-diagonally-spinning-rat-spinning-rat.mp4" type="video/mp4">
@@ -161,8 +162,13 @@
     <div class="container text-center">
       <p>&copy; 2024 Pásztor Máté</p>
     </div>
+    <button id="toggle-mode" class="btn btn-primary" style="background-color: #65FFDC; color: #222;border: none;">Kontraszt mód</button>
   </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="./kontraszt.js"></script>
+
 </body>
 
 </html>
