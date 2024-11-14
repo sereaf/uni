@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Railways</title>
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div id="menuView" class="view active">
+            <div class="menu">
+                <h1>RAILWAYS</h1>
+
+                <input type="text" id="playerName" placeholder="ADD MEG A NEVED!" />
+
+                <div class="buttons-container">
+                    <div class="difficulty-container">
+                        <span id="setDifficultyText">ÁLLÍTSD BE A NEHÉZSÉGET!</span><br /><br />
+                        <div class="difficulty-buttons">
+                            <div class="difficulty-option">
+                                <button class="difficulty-btn" id="easyBtn" onclick="selectDifficulty('easy')">
+                                    5 X 5
+                                </button>
+                                <span class="difficulty-label">KÖNNYŰ</span>
+                            </div>
+                            <div class="difficulty-option">
+                                <button class="difficulty-btn" id="hardBtn" onclick="selectDifficulty('hard')">
+                                    7 X 7
+                                </button>
+                                <span class="difficulty-label">NEHÉZ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="desc-btn" onclick="showDescription()">
+                            LEÍRÁS
+                        </button>
+                        <button class="start-btn" onclick="startGame()">
+                            JÁTÉK INDÍTÁSA
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameView" class="view">
+            <div class="game-container">
+                <div class="game-sidebar">
+                    <div class="sidebar-title">ÚTVONALTERVEZŐ:</div>
+                    <div class="player-info" id="playerInfo"></div>
+                    <div class="sidebar-divider"></div>
+                    <div class="timer-label">ELTELT IDŐ:</div>
+                    <div class="timer" id="gameTimer">00:00</div>
+                    <div class="sidebar-divider"></div>
+                    <div class="instructions">
+                        <div class="instruction-item">BAL KLIKK: Sín lehelyezése</div>
+                        <div class="instruction-item">JOBB KLIKK: Sín forgatása</div>
+                    </div>
+                </div>
+                <div class="game-board" id="gameBoard"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="desc-popup" id="descriptionPopup">
+        <p>
+            A Railways játék célja, hogy összekösd az állomásokat a megfelelő
+            útvonalakkal. Válaszd ki a nehézséget és add meg a neved, majd indítsd
+            el a játékot!
+        </p>
+        <button onclick="hideDescription()">Bezár</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
