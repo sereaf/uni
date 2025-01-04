@@ -1,0 +1,101 @@
+def ephi(n):
+    c = 0
+    for i in range(1,n): # 0rra nem érdemes nézni
+        if gcd(i, n) == 1:
+            c += 1
+    return c
+
+print(euler_phi(49))
+print(ephi(49))
+
+def minphi(n):
+    m = 1
+    i = euler_phi(m)
+    while i != n:
+        if prime_pi(m) > n: # adtam egy pontosabb becslést
+            return "Nincs"
+        m += 1
+        i = euler_phi(m)
+    return m
+    
+minphi(100)
+
+def find_carmichael(A):
+    L = []
+    for a in A:
+        if is_prime(a):
+            continue
+        
+        skip = False
+        for b in range(2, a):
+            if gcd(a, b) == 1 and pow(b, a-1, a) != 1:
+                skip = True
+                break
+                
+        if skip:
+            continue
+            
+        L.append(a)
+    return L
+        
+
+cns = find_carmichael(set(range(2,1000)))
+assert 561 in cns
+
+def first_base(m):
+    for a in range(2, m):
+        if pow(a, m-1, m) != 1:
+            return a
+    return "Nincsen"
+    
+assert 2 == first_base(18)
+assert 3 == first_base(645)
+
+for n in range(2, 10000):
+    if not is_prime(n):
+        if (gcd(n, 2) == 1 and power_mod(2, n-1, n) == 1 and
+            gcd(n, 3) == 1 and power_mod(3, n-1, n) == 1 and
+            and power_mod(4, n-1, n) == 1 and
+            gcd(n, 5) == 1 and power_mod(5, n-1, n) == 1):
+            if n not in find_carmichael([n]):
+                print(n)
+                break
+
+def fermat_prim(p):
+    a = randint(2, p-2)
+    return power_mod(a, p-1, p) == 1
+
+def proba_prim(n):
+    i = 2
+    while i * i < n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 1
+    return True
+
+def eratos(l, i):
+    if i >= len(l):
+        return l
+    k = l[i]
+    return eratos([n for n in l if n == k or n % k != 0], i+1)
+
+
+import time
+N = 10^8 + 5
+start_time = time.time()
+fermat_prim(N)
+fermat_time = time.time() - start_time
+
+start_time = time.time()
+proba_prim(N)
+proba_time = time.time() - start_time
+
+N = 10^3
+numbers = list(range(2, nth_prime(N)+1))
+start_time = time.time()
+eratos(numbers, 0)
+erattos_time = time.time() - start_time
+
+(fermat_time, proba_time, erattos_time)
+
+

@@ -1,0 +1,22 @@
+{
+    "0": {
+        "creature": "elf",
+        "count": 17
+    },
+    "1": {
+        "creature": "raindeer",
+        "count": 7899
+    },
+    "2": {
+        "creature": "kitsune",
+        "count": 4
+    },
+    "4": {
+        "creature": "dragon",
+        "count": 70
+    },
+    "5": {
+        "creature": "unicorn",
+        "count": 3
+    }
+}

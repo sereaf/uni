@@ -1,0 +1,90 @@
+C_words = ['00000', '00111', '11001', '11110']
+C = [vector(GF(2), [int(bit) for bit in word]) for word in C_words]
+
+G = matrix(C).transpose()
+G = G.echelon_form()
+
+n = G.ncols()
+k = G.nrows()
+H = G.right_kernel_matrix()
+
+n = len(C_words[0])
+error_vectors = [vector(GF(2), [1 if i == j else 0 for i in range(n)]) for j in range(n)]
+
+syndrome_table = {}
+for e in error_vectors:
+    s = H * e.column()
+    syndrome_table[tuple(s)] = e
+
+for s in syndrome_table:
+    print(f"Szindróma: {s}, Hibavektor: {syndrome_table[s]}")
+
+def generator_matrix_standard_form(g_coeffs, n):
+    k = len(g_coeffs)
+    G = []
+    for i in range(k):
+        row = [0]*i + g_coeffs + [0]*(n - k - i)
+        G.append(row[:n])
+    G = Matrix(GF(2), G)
+    G_std = G.echelon_form()
+    return G_std
+
+g = [1, 0, 1, 1]
+n = 7
+G_standard = generator_matrix_standard_form(g, n)
+print(G_standard)
+
+def generator_matrix(g_coeffs, n):
+    k = n - len(g_coeffs) + 1 
+    G = []
+    
+    for i in range(k):
+        row = [0]*i + g_coeffs + [0]*(n - len(g_coeffs) - i)
+        G.append(row)
+        
+    return Matrix(GF(2), G)
+
+g = [1, 0, 1, 1]
+n = 7 
+G = generator_matrix(g, n)
+print(G)
+
+def gen_divisors_poly(n, p):
+    R = PolynomialRing(GF(p), "x")
+    x = R.gen()
+    f = x^n - 1
+    factors = f.factor()
+    from itertools import combinations
+    all_generators = []
+    factor_list = [(factor, mult) for factor, mult in factors]
+    for i in range(1, len(factor_list) + 1):
+        for combo in combinations(factor_list, i):
+            g = R(1)
+            for factor, _ in combo:
+                g *= factor
+                
+            if g.degree() < n:
+                all_generators.append(g)
+    return all_generators
+
+n = 7
+p = 2
+generators = gen_divisors_poly(n, p)
+for g in generators:
+    print(f"Generátorpolinom: {g}")
+
+def code_polynomial(m_coeffs, g_coeffs):
+    R = PolynomialRing(GF(2), 'x')
+    m = R(m_coeffs)
+    g = R(g_coeffs)
+    c = m * g
+    return c
+
+m_coeffs = [1, 0, 1]
+g_coeffs = [1, 0, 1, 1]
+c = code_polynomial(m_coeffs, g_coeffs)
+print(f'Kódpolinom c(x): {c}')
+
+
+
+

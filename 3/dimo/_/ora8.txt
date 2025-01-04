@@ -1,0 +1,165 @@
+# Polinomok definiálása
+# 1. Ezzel a módszerrel nem kapunk polinomot, pár függvény ígyis müködhet de inkább ne használd ezt.
+f = 4*x^2+3*x+2
+print("Legyen f = ", f)
+print("1. esetben f típusa:", type(f))
+
+# 2. 
+R = ZZ['x'] # Egészek feletti polinomok
+p1 = 4*x^2+3*x+2
+p2 = R(4*x^2+3*x+2)
+print(f"2. esetben az f típusa: {type(p1)}")
+print(f"2. esetben az R(f) típusa: {type(p2)}")
+
+# 3.
+R  = PolynomialRing(QQ, 'x')
+print("R és QQ['x'] megegyeznek:", type(R) == type(QQ['x']))
+f = R(4*x^2+3*x+2) # polinom
+f1 = 4*x^2+3*x+2 # még mindig nem polinom
+# print(f)
+print("3. esetben f típusa:",type(f))
+print("3. esetben f1 típusa:",type(f1))
+
+print("Vigyázz, mert Expression típutú értéket össze tudsz szorozni polinommal de az eredmény:", type(x*f))
+print("Előző szorzat polinom típusú ha 'R(x)*f' alakot használsz.")
+
+# 4. 
+RZ.<x> = PolynomialRing(ZZ) # Z[x] feletti polinomok
+f = 4*x^2+3*x+2 #polinom
+# print(f)
+print("4. esetben f típusa:",type(f))
+
+# 5. Z_m feletti polinomok
+# y-t már kell definiálni ha használni akarjuk
+var('y')
+RZ3.<y> = PolynomialRing(IntegerModRing(3)) # Z_3 struktura 
+f = 4*y^3+3*y+2
+print("5. esetben legyen f =", f)
+print("5. esetben f típusa:", type(f))
+
+# 6.  Listából is konstruálható, vigyázzunk az együtthatók sorrendjére!
+f = ZZ['x']([1,2,0,3, 0, 5])
+print("6. esetben legyen f =", f)
+print("6. esetben f típusa:", type(f))
+
+
+#7. többváltozós polinomok
+var('z,y1')
+f=ZZ['x,z,y1'](y1^2+5*y1-102 + x + z)
+print("7. esetben legyen f =", f)
+print("7. esetben f típusa:", type(f))
+
+# Műveletek polinomokkal
+p3 = ZZ['x'](54*x^4 + 36*x^3 - 102*x^2 - 72*x - 12)
+print("Legyen p = ", p3)
+print("p főegyütthatója: ", p3.leading_coefficient())
+print("p konstans tagja: ", p3.constant_coefficient(), p3(0))
+print("", p3.coefficients()) 
+print("p fokszáma: ", p3.degree())
+print("p együtthatóinak listája: ", p3.list())
+print("p kiértékelése a 2-ben: ", p3(2))
+print(f"p {x^2} melletti együthatója: ", p3[2])
+print("3*p = ", 3 * p3)
+print("p^5 = ", p3^5)
+
+print("p gyökei: ", p3.roots())
+print("p gyökei komplex számok felett: ", p3.roots(ring=CC))
+print("p-t polinomok szorzatára bontása: ", p3.factor())
+
+
+# Maradékos osztás (ha elvégezhető)
+T = ZZ['x']
+f = T(42*x^4 - 7*x^3 + 13*x^2 + 43*x - 12)
+g = T(3*x^2 - x + 1) 
+
+print("Legyen f = ", f)
+print("Legyen g = ", g)
+print(f"Az f-t elosztva g-vel a hányados {f // g} és a maradék {f % g}.")
+
+
+p = ZZ['x']((3*x^8+5*x^6-11*x^3+7*x^2-15*x+8)*(x+1))*(x+10)
+q = ZZ['x']((x^3+1)*(x+2))
+print("Legyen p = ", p)
+print("Legyen q = ", q)
+print("p és q polinomok legnagyobb közös oszó polinomja: ", gcd(p,q)) # lehet p.gcd(q) alakba is írni
+
+
+
+# Segítség: a roots függvény párokad ad vissza ahol az első érték az az c amire p(c) = 0, a második pedig, hogy hányszoros gyök vagyis a szorzat alakban az (x-c) hányadik hatványon jelenik meg
+print("p gyökei: ", p.roots())
+
+
+def n_polly(poly):
+    R = poly.parent()
+    roots = poly.roots()
+    null_polynomial = R(1)
+    for root, multiplicity in roots:
+        null_polynomial *= (R.gen() - root)^multiplicity
+    return null_polynomial
+
+class my_poly(object):
+    def __init__(self, F):
+        self.coefficients = F
+        
+    def deg(self):
+        return len(self.coefficients) - 1 if self.coefficients else -1
+    
+    def __add__(self, other):
+        max_deg = max(self.deg(), other.deg())
+        result = [0] * (max_deg + 1)
+        
+        for i in range(self.deg() + 1):
+            result[i] += self.coefficients[i]
+        for i in range(other.deg() + 1):
+            result[i] += other.coefficients[i]
+            
+        return my_poly(result)
+        
+    def __mul__(self, other):
+        result_deg = self.deg() + other.deg()
+        result = [0] * (result_deg + 1)
+        
+        for i in range(self.deg() + 1):
+            for j in range(other.deg() + 1):
+                result[i + j] += self.coefficients[i] * other.coefficients[j]
+        
+        return my_poly(result)
+        
+    def __repr__(self):
+        return " + ".join(f"{coef}*x^{i}" for i, coef in enumerate(self.coefficients) if coef != 0)
+    
+    def eval(self, x):
+        result = 0
+        for coef in reversed(self.coefficients):
+            result = result * x + coef
+        return result
+
+
+def lagrange_interp(points):
+    R = PolynomialRing(QQ, 'x')
+    x = R.gen()
+    
+    n = len(points)
+    P = R(0)
+    
+    for i in range(n):
+        xi, yi = points[i]
+        Li = R(yi)
+        
+        for j in range(n):
+            if i != j:
+                xj = points[j][0]
+                Li *= (x - xj)
+                Li //= (xi - xj)
+        P += Li
+        
+    return P
+
+L = [(1, 2), (3, 4), (5, 6)]
+P = lagrange_interp(L)
+Q = PolynomialRing(QQ, 'x').lagrange_polynomial(L)
+
+print(P)
+print(Q)
+
+
